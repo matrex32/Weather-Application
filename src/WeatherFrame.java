@@ -182,7 +182,7 @@ public class WeatherFrame extends JFrame {
      */
     public void displayWeatherData(String city) {
         if (!city.isEmpty()) {
-            String apiUrl = String.format(WeatherAPIConstants.API_URL, city, WeatherAPIConstants.API_KEY);
+            String apiUrl = String.format(WeatherAPIConstants.request_URL, city, WeatherAPIConstants.API_KEY);
             JSONObject weatherData = OpenWeatherAPI.getWeatherData(apiUrl);
             if (weatherData != null) {
                 temperatureLabel.setText( Messages.TEMPERATURE_STRING + weatherData.getJSONObject("main").getInt("temp") + Messages.CELSIUS_STRING);
@@ -209,7 +209,7 @@ public class WeatherFrame extends JFrame {
         return (ActionEvent e) -> {
 
                 String city = cityTextField.getText();
-                String apiUrl = String.format(WeatherAPIConstants.API_URL, city, WeatherAPIConstants.API_KEY);
+                String apiUrl = String.format(WeatherAPIConstants.request_URL, city, WeatherAPIConstants.API_KEY);
                 JSONObject weatherData = OpenWeatherAPI.getWeatherData(apiUrl);
 
                 if(weatherData!=null){

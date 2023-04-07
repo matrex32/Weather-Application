@@ -18,6 +18,6 @@ public class WeatherAPIConstants {
         /**
          * Through this URL we make requests to the Open Weather API
          */
-        public static final String API_URL = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric";
+        public static final String request_URL = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric";
 
 }
